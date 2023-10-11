@@ -1,0 +1,807 @@
+{
+	"info": {
+		"_postman_id": "fed44f96-4e2a-4279-bfab-12ef9e44afed",
+		"name": "Persona Api Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30258870"
+	},
+	"item": [
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/personas",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/personas/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\":1,\r\n        \"nombre\": \"Pedro\",\r\n        \"apellido\": \"Gomez\",\r\n        \"dni\": 100021,\r\n        \"domicilio\": {\r\n            \"id\":1,\r\n            \"calle\":\"San Martin\",\r\n            \"numero\": 3001,\r\n            \"localidad\": {\r\n                \"id\": 1,\r\n                \"denominacion\": \"Las Heras\"\r\n            }\r\n        },\r\n        \"libros\":[\r\n            {\r\n                \"id\":1,\r\n                \"titulo\": \"El Gaucho Martín Fierro\",\r\n                \"fecha\": 1872,\r\n                \"genero\": \"Gauchesco\",\r\n                \"paginas\": 360,\r\n                \"autor\": \"José Hernández\",\r\n                \"autores\":[\r\n                    {\r\n                        \"id\":1,\r\n                        \"nombre\":\"José\",\r\n                        \"apellido\":\"Hernández\",\r\n                        \"biografia\": \"José Hernández fue un poeta y político argentino nacido en Chacras de Perdriel en 1834 y fallecido en Buenos Aires en 1886. De fuerte compromiso político, su obra tocó tanto el periodismo como la poesía.\"\r\n                \r\n                    }\r\n                ]\r\n            }]\r\n\r\n    }\r\n"
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/personas",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Maria\",\r\n    \"apellido\": \"Messi\",\r\n    \"dni\": 7317811\r\n}"
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/personas/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/personas/",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/personas/search?filtro=Pe",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "Pe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/personas/paged?page=0&size=5&sort=id,asc",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/personas/searchPaged?filtro=e&page=1&size=5&sort=id,desc",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"searchPaged"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "e"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Libros",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/libro",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/libros/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"id\":1,\r\n                \"titulo\": \"El Gaucho Martín Fierro\",\r\n                \"fecha\": 1872,\r\n                \"genero\": \"Gauchesco\",\r\n                \"paginas\": 360,\r\n                \"autor\": \"José Hernández\",\r\n                \"autores\":[\r\n                    {\r\n                        \"id\":1,\r\n                        \"nombre\":\"José\",\r\n                        \"apellido\":\"Hernández\",\r\n                        \"biografia\": \"José Hernández fue un poeta y político argentino nacido en Chacras de Perdriel en 1834 y fallecido en Buenos Aires en 1886. De fuerte compromiso político, su obra tocó tanto el periodismo como la poesía.\"\r\n                \r\n                    }\r\n                ]\r\n            }"
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/libros",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/libros/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/libros/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Domicilios",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/domicilios",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/domicilios/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"id\":1,\r\n            \"calle\":\"San Martin\",\r\n            \"numero\": 3001,\r\n            \"localidad\": {\r\n                \"id\": 1,\r\n                \"denominacion\": \"Las Heras\"\r\n            }\r\n}"
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/domicilios",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/domicilios/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/domicilios/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidades",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/localidades",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/localidades/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"id\": 1,\r\n    \"denominacion\": \"Las Heras\"\r\n}"
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/localidades",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/localidades/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/localidades/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autores",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/autores",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/autores/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                        \"id\":1,\r\n                        \"nombre\":\"José\",\r\n                        \"apellido\":\"Hernández\",\r\n                        \"biografia\": \"José Hernández fue un poeta y político argentino nacido en Chacras de Perdriel en 1834 y fallecido en Buenos Aires en 1886. De fuerte compromiso político, su obra tocó tanto el periodismo como la poesía.\"\r\n                \r\n                    }"
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/autores",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/autores/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://apiconpaginacion-p3e9.onrender.com/api/v1/autores/1",
+							"protocol": "https",
+							"host": [
+								"apiconpaginacion-p3e9",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
